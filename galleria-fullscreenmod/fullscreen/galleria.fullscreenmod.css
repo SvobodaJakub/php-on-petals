@@ -1,0 +1,259 @@
+/**
+ * Galleria Fullscreenmod Theme 2017-06-10
+ * Copyright (c) 2017 Jakub Svoboda
+ * Based on:
+ *  * Galleria Classic Theme 2017-02-27, Copyright (c) 2010 - 2017 worse is better UG, 
+ *    Licensed 2017-02-27 under the MIT license, https://raw.github.com/worseisbetter/galleria/master/LICENSE
+ *    galleria.fullscreen.js and galleria.fullscreen.css, version 1.5.4
+ *  * Galleria Classicmod Theme, Copyright (c) 2013 Jan-Philip Gehrcke, http://gehrcke.de, 
+ *    based on Galleria Classic Theme, Copyright (c) 2012 Aino, http://aino.se,
+ *    Licensed under the MIT license, https://raw.github.com/aino/galleria/master/LICENSE
+ * 
+ * Licensed 2017-06-10 under the MIT license
+ * 
+ * Copyright (c) 2017 Jakub Svoboda
+ * Copyright (c) 2010 - 2017 worse is better UG
+ * Copyright (c) 2013 Jan-Philip Gehrcke, http://gehrcke.de
+ * Copyright (c) 2012 Aino http://aino.se
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ * 
+ */
+
+#galleria-loader{height:1px!important}
+
+html,
+body { background: #000 }
+.galleria-theme-fullscreenmod {
+    height: 100%;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #000;
+    -webkit-font-smoothing: antialiased;
+}
+.galleria-theme-fullscreenmod img {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+}
+.galleria-theme-fullscreenmod .galleria-stage {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.galleria-theme-fullscreenmod .galleria-thumbnails-container {
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+    padding-top: 16px;
+    width: 100%;
+}
+.galleria-theme-fullscreenmod.videoplay .galleria-thumbnails-container { display:none!important; }
+.galleria-theme-fullscreenmod.videoplay .galleria-image-nav { top:80px; bottom:80px; height:auto; }
+
+.galleria-theme-fullscreenmod .galleria-thumbnails-tab {
+    opacity: .7;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+    filter: alpha(opacity=70);
+    position: absolute;
+    left: 50%;
+    margin-left: -50px;
+    top: 0;
+    height: 16px;
+    width: 100px;
+    background: #000 url(up.gif) no-repeat 50% 5px;
+    cursor: pointer;
+    -moz-border-radius-topleft: 4px;
+    -moz-border-radius-topright: 4px;
+    -webkit-border-top-right-radius: 4px;
+    -webkit-border-top-left-radius: 4px;
+}
+.galleria-theme-fullscreenmod.light .galleria-thumbnails-tab {
+    background:#fff url(up-neg.gif) no-repeat 50% 50%;
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100);
+}
+.galleria-theme-fullscreenmod .galleria-thumbnails-tab:hover {
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100);
+}
+.galleria-theme-fullscreenmod .galleria-thumbnails-tab.open,
+.galleria-theme-fullscreenmod .galleria-thumbnails-tab.open:hover {
+    background-image: url(down.gif);
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100);
+}
+.galleria-theme-fullscreenmod.light .galleria-thumbnails-tab.open,
+.galleria-theme-fullscreenmod.light .galleria-thumbnails-tab.open:hover {
+    background-image: url(down-neg.gif);
+}
+.galleria-theme-fullscreenmod .galleria-thumbnails {
+    background: #000;
+    overflow: hidden;
+}
+.galleria-theme-fullscreenmod .galleria-thumbnails-list {
+    background: #000;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    overflow: hidden;
+}
+.galleria-theme-fullscreenmod.light .galleria-thumbnails,
+.galleria-theme-fullscreenmod.light .galleria-thumbnails-list {
+    background:#fff;
+}
+.galleria-theme-fullscreenmod .galleria-thumbnails .galleria-image {
+    width: 80px;
+    height: 50px;
+    float: left;
+    cursor: pointer;
+    margin-right: 5px;
+}
+.galleria-theme-fullscreenmod .galleria-thumbnails .galleria-image img { background: #000 }
+.galleria-theme-fullscreenmod .galleria-thumbnails .active { cursor: default }
+.galleria-theme-fullscreenmod .galleria-carousel .galleria-thumbnails-list {
+    border-left: 30px solid #000;
+    border-right: 30px solid #000;
+}
+.galleria-theme-fullscreenmod.light .galleria-carousel .galleria-thumbnails-list {
+    border-color: #fff;
+}
+.galleria-theme-fullscreenmod .galleria-image-nav {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.galleria-theme-fullscreenmod .galleria-image-nav-right,
+.galleria-theme-fullscreenmod .galleria-image-nav-left {
+    width: 100px;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: url(r.gif) no-repeat 50% 50%;
+    position: absolute;
+    cursor: pointer;
+    z-index: 2;
+    display: none;
+}
+.galleria-theme-fullscreenmod.smallarrows .galleria-image-nav-right {
+    background-image: url(r-neg.png);
+}
+.galleria-theme-fullscreenmod .galleria-image-nav-left {
+    left: 0;
+    right: auto;
+    background-image: url(l.gif);
+}
+.galleria-theme-fullscreenmod.smallarrows .galleria-image-nav-left {
+    background-image: url(l-neg.png);
+}
+.galleria-theme-fullscreenmod .galleria-loader {
+    width: 30px;
+    height: 30px;
+    background: #fff url(loader.gif) no-repeat 50% 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -15px;
+    margin-left: -15px;
+    z-index: 3;
+}
+.galleria-theme-fullscreenmod .galleria-info {
+    z-index: 4;
+    font: 13px/1.4 helvetica,arial,sans-serif;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    border-top: 2px solid #000;
+    display: none;
+    text-align: center;
+    padding: 10px 0;
+    background: rgba(0,0,0,.5);
+    border-bottom:1px solid rgba(0,0,0,.1);
+}
+.galleria-theme-fullscreenmod.light .galleria-info{background:rgba(255,255,255,.5);color:#000;}
+.galleria-theme-fullscreenmod .galleria-info-text {
+    width: 50%;
+    margin: 0 auto;
+}
+.galleria-theme-fullscreenmod .galleria-info-title { font-weight: bold; display: inline-block; margin-right:10px; }
+.galleria-theme-fullscreenmod .galleria-info-description { display:inline-block; }
+.galleria-theme-fullscreenmod .galleria-thumb-nav-left,
+.galleria-theme-fullscreenmod .galleria-thumb-nav-right {
+    cursor: pointer;
+    display: none;
+    background: url(p.gif) no-repeat 50% 50%;
+    position: absolute;
+    left: 5px;
+    top: 21px;
+    bottom: 5px;
+    width: 20px;
+    z-index: 3;
+    opacity: .8;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+    filter: alpha(opacity=80);
+}
+.galleria-theme-fullscreenmod.light .galleria-thumb-nav-left{
+    background-image: url(p-neg.png);
+}
+.galleria-theme-fullscreenmod .galleria-thumb-nav-right {
+    background-image: url(n.gif);
+    left: auto;
+    right: 5px;
+}
+.galleria-theme-fullscreenmod.light .galleria-thumb-nav-right{
+    background-image: url(n-neg.png);
+}
+.galleria-theme-fullscreenmod .galleria-carousel .galleria-thumb-nav-left,
+.galleria-theme-fullscreenmod .galleria-carousel .galleria-thumb-nav-right { display: block }
+.galleria-theme-fullscreenmod .galleria-carousel .galleria-thumb-nav-left:hover,
+.galleria-theme-fullscreenmod .galleria-carousel .galleria-thumb-nav-right:hover { background-color: #222 }
+.galleria-theme-fullscreenmod .galleria-thumb-nav-left.disabled,
+.galleria-theme-fullscreenmod .galleria-thumb-nav-right.disabled,
+.galleria-theme-fullscreenmod .galleria-thumb-nav-left.disabled:hover,
+.galleria-theme-fullscreenmod .galleria-thumb-nav-right.disabled:hover {
+    opacity: .2;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+    filter: alpha(opacity=20);
+    cursor: default;
+}
+.galleria-theme-fullscreenmod.light .galleria-carousel .galleria-thumb-nav-left:hover,
+.galleria-theme-fullscreenmod.light .galleria-carousel .galleria-thumb-nav-right:hover { background-color: #ddd }
+.galleria-theme-fullscreenmod .galleria-fullscreen-button {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    bottom: 0px;
+    right: 5px;
+    background: url(fullscreen_on.png);
+    z-index: 4;
+    cursor: pointer;
+    opacity: 0.8;
+}
+.galleria-theme-fullscreenmod .galleria-fullscreen-button:hover {
+    opacity: 1;
+}
+
